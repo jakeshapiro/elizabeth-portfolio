@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Publications and research by Elizabeth Hansen Shapiro - Articles, reports, and projects.">
+    <title>Publications | Elizabeth Hansen Shapiro</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">Elizabeth Hansen Shapiro</a>
+            <div class="nav-toggle" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="publications.html" class="active">Publications</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <h1>Publications & Work</h1>
+        </div>
+
+        <div class="container">
+            <!-- Peer-Reviewed Articles Section -->
+            <section class="section">
+                <h2>Peer-Reviewed Articles</h2>
+
+                <div class="publication-item">
+                    <h3>Title of Article</h3>
+                    <p class="publication-meta">Journal Name, Volume(Issue), Pages. Year.</p>
+                    <p>
+                        Brief description of the article's focus, methodology, and key findings. Explain the significance of this research and its contribution to the field.
+                    </p>
+                    <a href="#" class="publication-link">Read Article &rarr;</a>
+                </div>
+
+                <div class="publication-item">
+                    <h3>Title of Another Article</h3>
+                    <p class="publication-meta">Journal Name, Volume(Issue), Pages. Year.</p>
+                    <p>
+                        Description of this publication, including its research questions, methods, and implications for practice or policy.
+                    </p>
+                    <a href="#" class="publication-link">Read Article &rarr;</a>
+                </div>
+            </section>
+
+            <!-- Reports & White Papers Section -->
+            <section class="section">
+                <h2>Reports & White Papers</h2>
+
+                <div class="publication-item">
+                    <h3>Title of Report</h3>
+                    <p class="publication-meta">Publishing Organization. Year.</p>
+                    <p>
+                        Overview of this report's purpose, key findings, and recommendations. Explain who the intended audience is and how the report has been used.
+                    </p>
+                    <a href="#" class="publication-link">Download PDF &rarr;</a>
+                </div>
+
+                <div class="publication-item">
+                    <h3>Title of White Paper</h3>
+                    <p class="publication-meta">Publishing Organization. Year.</p>
+                    <p>
+                        Summary of the white paper's main arguments and evidence presented. Note any policy or practice implications.
+                    </p>
+                    <a href="#" class="publication-link">Download PDF &rarr;</a>
+                </div>
+            </section>
+
+            <!-- Book Chapters Section -->
+            <section class="section">
+                <h2>Book Chapters</h2>
+
+                <div class="publication-item">
+                    <h3>Chapter Title</h3>
+                    <p class="publication-meta">In: Editor Name(s) (Eds.), Book Title (pp. XX-XX). Publisher. Year.</p>
+                    <p>
+                        Description of the chapter's content and its place within the broader book project. Highlight key themes and contributions.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Selected Projects Section -->
+            <section class="section">
+                <h2>Selected Projects</h2>
+
+                <div class="publication-item">
+                    <h3>Project Title</h3>
+                    <p class="publication-meta">Role: Principal Investigator | Funding Source | Year - Year</p>
+                    <p>
+                        Description of the project's goals, methodology, and outcomes. Explain your role and the project's impact on the field or community.
+                    </p>
+                </div>
+
+                <div class="publication-item">
+                    <h3>Another Project Title</h3>
+                    <p class="publication-meta">Role: Co-Investigator | Funding Source | Year - Year</p>
+                    <p>
+                        Overview of this project, including research questions, methods, and key findings. Note any ongoing work or future directions.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Presentations Section -->
+            <section class="section">
+                <h2>Selected Presentations</h2>
+
+                <div class="publication-item">
+                    <h3>Presentation Title</h3>
+                    <p class="publication-meta">Conference Name. Location. Year.</p>
+                    <p>
+                        Brief description of the presentation topic and key takeaways shared with the audience.
+                    </p>
+                </div>
+
+                <div class="publication-item">
+                    <h3>Another Presentation Title</h3>
+                    <p class="publication-meta">Conference or Event Name. Location. Year.</p>
+                    <p>
+                        Summary of the presentation content and its reception or impact.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Elizabeth Hansen Shapiro. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Auth check
+        if (sessionStorage.getItem('authenticated') !== 'true') {
+            window.location.href = 'index.html';
+        }
+
+        function toggleNav() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Curriculum Vitae of Elizabeth Hansen Shapiro - Education, experience, and professional accomplishments.">
+    <title>CV | Elizabeth Hansen Shapiro</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">Elizabeth Hansen Shapiro</a>
+            <div class="nav-toggle" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="cv.html" class="active">CV</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <h1>Curriculum Vitae</h1>
+        </div>
+
+        <div class="container">
+            <!-- Education Section -->
+            <section class="cv-section">
+                <h2>Education</h2>
+
+                <div class="cv-item">
+                    <h3>PhD, Organizational Behavior and Sociology</h3>
+                    <p class="date">Harvard Business School</p>
+                    <p>Research focus on organizational sustainability, business models, and institutional change in media organizations.</p>
+                </div>
+            </section>
+
+            <!-- Professional Experience Section -->
+            <section class="cv-section">
+                <h2>Professional Experience</h2>
+
+                <div class="cv-item">
+                    <h3>Senior Research Fellow</h3>
+                    <p class="date">Tow Center for Digital Journalism, Columbia Journalism School | 2020 - Present</p>
+                    <p>Conducting research on the future of journalism in public media and public policies to support local news. Developing evidence-based frameworks for news sustainability.</p>
+                </div>
+
+                <div class="cv-item">
+                    <h3>Co-Founder and CEO</h3>
+                    <p class="date">National Trust for Local News | 2021 - 2025</p>
+                    <p>Founded and led organization dedicated to acquiring and sustaining local newspapers as nonprofit community assets. Raised $38 million from philanthropic funders including Knight Foundation, Google News Initiative, and Open Society Foundations. Oversaw acquisition of newspapers in Colorado, Maine, and Georgia and establishment of subsidiary state trusts.</p>
+                </div>
+
+                <div class="cv-item">
+                    <h3>Research Director, News Sustainability</h3>
+                    <p class="date">Shorenstein Center on Media, Politics, and Public Policy, Harvard Kennedy School | 2017 - 2020</p>
+                    <p>Led research initiatives examining new business models and organizational structures for sustaining quality local journalism. Published influential research on news industry transformation.</p>
+                </div>
+            </section>
+
+            <!-- Research Interests Section -->
+            <section class="cv-section">
+                <h2>Research Interests</h2>
+                <p>
+                    Local news sustainability; nonprofit media models; journalism business innovation; public policy for news; public media futures; organizational transformation in media; community information needs; collaborative journalism models.
+                </p>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="cv-section">
+                <h2>Expertise</h2>
+
+                <div class="cv-item">
+                    <h3>Research</h3>
+                    <p>Mixed-methods research design, organizational analysis, business model innovation, policy analysis, industry studies.</p>
+                </div>
+
+                <div class="cv-item">
+                    <h3>Leadership</h3>
+                    <p>Nonprofit founding and management, strategic planning, fundraising, partnership development, stakeholder engagement, organizational scaling.</p>
+                </div>
+
+                <div class="cv-item">
+                    <h3>Industry Knowledge</h3>
+                    <p>Local news ecosystems, newspaper operations, nonprofit conversion, philanthropic funding, public media, journalism policy.</p>
+                </div>
+            </section>
+
+            <!-- Funding & Partnerships Section -->
+            <section class="cv-section">
+                <h2>Major Funders & Partners</h2>
+                <p>
+                    Knight Foundation<br>
+                    Google News Initiative<br>
+                    Open Society Foundations<br>
+                    Report for America<br>
+                    Public Media Venture Group
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Elizabeth Hansen Shapiro. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Auth check
+        if (sessionStorage.getItem('authenticated') !== 'true') {
+            window.location.href = 'index.html';
+        }
+
+        function toggleNav() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
