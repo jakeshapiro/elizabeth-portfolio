@@ -206,6 +206,30 @@ main {
     padding: 0 2rem;
 }
 
+/* Page Header with Background Image */
+.page-header-bg {
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 0;
+    position: relative;
+}
+
+.page-header-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+}
+
+.page-header-bg h1 {
+    position: relative;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
 /* Section Styles */
 .section {
     padding: 3rem 0;
