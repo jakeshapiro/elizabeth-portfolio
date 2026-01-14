@@ -35,24 +35,48 @@
             <section class="section">
                 <div class="contact-content">
                     <p>
-                        I welcome inquiries about research collaborations, speaking engagements, consulting opportunities, and other professional matters. Please feel free to reach out using the information below.
+                        I welcome inquiries about research collaborations, speaking engagements, consulting opportunities, and other professional matters. Please use the form below to get in touch.
                     </p>
 
-                    <div class="contact-item">
-                        <h3>Email</h3>
-                        <p><a href="mailto:elizabeth@hansenshapiro.com">elizabeth@hansenshapiro.com</a></p>
-                    </div>
+                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+                        <input type="hidden" name="form-name" value="contact">
+                        <p class="hidden" style="display:none;">
+                            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                        </p>
 
-                    <div class="contact-item">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a topic...</option>
+                                <option value="Research Collaboration">Research Collaboration</option>
+                                <option value="Speaking Engagement">Speaking Engagement</option>
+                                <option value="Consulting">Consulting</option>
+                                <option value="Media Inquiry">Media Inquiry</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+
+                    <div class="contact-item" style="margin-top: 2rem;">
                         <h3>LinkedIn</h3>
-                        <p><a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer">linkedin.com/in/elizabethhansenshapiro</a></p>
-                        <!-- Update with actual LinkedIn URL -->
-                    </div>
-
-                    <div class="contact-item">
-                        <h3>Location</h3>
-                        <p>City, State</p>
-                        <!-- Update with preferred location to display -->
+                        <p><a href="https://www.linkedin.com/in/elizabeth-hansen-shapiro-5a76339/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></p>
                     </div>
 
                     <div class="contact-item">
