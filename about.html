@@ -36,3 +36,61 @@
         <div class="container">
             <section class="section">
                 <h2>Background</h2>
+                <p>
+                    Elizabeth Hansen Shapiro is a nonprofit executive and academic working at the intersection of journalism, technology, and public policy. She co-founded the National Trust for Local News and served as its founding CEO from 2021 to 2025, building an organization dedicated to acquiring and sustaining local newspapers as nonprofit community assets.
+                </p>
+                <p>
+                    Modeled after land conservancies like The Nature Conservancy, the National Trust for Local News works to protect local journalism from hedge fund acquisition by transitioning newspapers to sustainable nonprofit ownership. Under Elizabeth's leadership, the organization raised $38 million from philanthropic funders including the Knight Foundation, Google News Initiative, and Open Society Foundations, and acquired newspapers in Colorado, Maine, and Georgia.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>Academic Work</h2>
+                <p>
+                    Elizabeth holds a PhD in Organizational Behavior and Sociology from Harvard Business School. Her academic research focuses on news sustainability, the future of journalism in public media, and public policies to support local news.
+                </p>
+                <p>
+                    She is currently a Senior Research Fellow at the Tow Center for Digital Journalism at Columbia Journalism School, where she continues to study the evolving landscape of local news and develop evidence-based solutions to the journalism crisis.
+                </p>
+                <p>
+                    From 2017 to 2020, Elizabeth led news sustainability research at the Shorenstein Center on Media, Politics, and Public Policy at Harvard Kennedy School, where she examined new business models and organizational structures for sustaining quality journalism.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>The National Trust for Local News</h2>
+                <p>
+                    In 2020, Elizabeth began collaborating with Marc Hand (then CEO of the Public Media Venture Group) and Steve Waldman (then CEO of Report for America) to address the local news crisis. Their discussions led to the founding of the National Trust for Local News in 2021.
+                </p>
+                <p>
+                    The organization's innovative model acquires local news outlets and transitions them to nonprofit status, ensuring they remain focused on serving their communities rather than maximizing profit. The Trust established subsidiary state trusts and expanded its portfolio across multiple states during Elizabeth's tenure.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>Personal</h2>
+                <p>
+                    Elizabeth is named after her grandmother, Elizabeth "Betty" Hansen (née Morningstar), who was a columnist for the Saginaw Daily News in Michigan. This family connection to local journalism has shaped her commitment to preserving community news institutions for future generations.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> Elizabeth Hansen Shapiro. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
