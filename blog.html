@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog - Elizabeth Hansen Shapiro">
+    <title>Blog | Elizabeth Hansen Shapiro</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Elizabeth Hansen Shapiro</a>
+            <div class="nav-toggle" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <h1>Blog</h1>
+        </div>
+
+        <div class="container">
+            <section class="section">
+                <div id="blog-posts">
+                    <p class="publication-meta">Loading posts...</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> Elizabeth Hansen Shapiro. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const MEDIUM_USERNAME = '';
+
+        function toggleNav() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        function stripHtml(html) {
+            const tmp = document.createElement('div');
+            tmp.innerHTML = html;
+            return tmp.textContent || tmp.innerText || '';
+        }
+
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        }
+
+        function renderPosts(items) {
+            const container = document.getElementById('blog-posts');
+            if (!items || items.length === 0) {
+                container.innerHTML = '<p class="publication-meta">No posts yet. Check back soon.</p>';
+                return;
+            }
+            container.innerHTML = items.map(item => {
+                const excerpt = stripHtml(item.description).replace(/\s+/g, ' ').trim().slice(0, 280);
+                const date = formatDate(item.pubDate);
+                const categories = item.categories ? item.categories.slice(0, 3).join(' · ') : '';
+                return '<div class="publication-item"><h3><a href="' + item.link + '" target="_blank" rel="noopener noreferrer">' + item.title + '</a></h3><p class="publication-meta">' + date + (categories ? ' · ' + categories : '') + '</p><p>' + excerpt + '…</p><a href="' + item.link + '" class="publication-link" target="_blank" rel="noopener noreferrer">Read on Medium →</a></div>';
+            }).join('');
+        }
+
+        function loadPosts() {
+            const container = document.getElementById('blog-posts');
+            if (!MEDIUM_USERNAME) {
+                container.innerHTML = '<p class="publication-meta">Blog coming soon.</p>';
+                return;
+            }
+            const feedUrl = encodeURIComponent('https://medium.com/feed/@' + MEDIUM_USERNAME);
+            fetch('https://api.rss2json.com/v1/api.json?rss_url=' + feedUrl)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status === 'ok') { renderPosts(data.items); }
+                    else { container.innerHTML = '<p class="publication-meta">Could not load posts.</p>'; }
+                })
+                .catch(() => { container.innerHTML = '<p class="publication-meta">Could not load posts.</p>'; });
+        }
+
+        loadPosts();
+    </script>
+</body>
+</html>
